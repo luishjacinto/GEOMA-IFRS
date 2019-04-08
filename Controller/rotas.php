@@ -9,6 +9,7 @@ function getPagina()
     //var_dump($url);
         switch($url){
             case '/':
+                header("Location: http://localhost:5000/inicio");
             break;
             case '/inicio':
                 getHeader();
@@ -69,6 +70,17 @@ function getPagina()
                 getHeader();
                 include('View/administrador.php');
                 getFooter();
+            break;
+            case '/teste':
+                function conexao(){
+                    $db = pg_connect("host=localhost; port=5433; dbname=geoma; user=postgres; password=postgres;");
+                    return $db;
+                }
+                conexao();
+                //include('Model/teste.php');
+            break;
+            default:
+                include('View/404.php');
             break;
 
     }

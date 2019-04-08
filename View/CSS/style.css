@@ -19,6 +19,15 @@ body {
     height: 100%;
 }
 
+body img{
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    pointer-events: none;
+}
+
 .jumbotron img { 
     width: 35%;
 }
@@ -103,7 +112,16 @@ ul li {
     background-color: white;
 }
 
-.contato-dados{
+.home p{
+    font-size: 120%; 
+    color: lightgrey;
+}
+
+.home h5{
+    font-size: 140%;
+}
+
+.contato h5{
     color: var(--contato-dados);
 }
 

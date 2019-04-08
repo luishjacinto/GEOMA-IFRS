@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <title>Contato</title>
-<div class="container-fluid">
+<div class="container-fluid contato">
 	<h2 class="text-center titulo-padrao">ENDEREÇO / CONTATO</h2>
 	<hr class="divisoria">
-	<h5 class="contato-dados">
+	<h5>
 		LOGRADOURO: Eng. Alfredo Huch
 		<hr>
 		NÚMERO: 475

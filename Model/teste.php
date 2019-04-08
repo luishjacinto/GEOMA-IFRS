@@ -1,5 +1,10 @@
 <?php
-include('Crud/Model.php');
+include('Model/Crud/Model.php');
+include_once('Model/Crud/Setup.php');
+
+$post = R::dispense( 'post' ); 
+$post->text = 'Hello World';
+$id = R::store( $post );
 
 /*
 $roupaDoUsuario1=
