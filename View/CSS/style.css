@@ -1,0 +1,151 @@
+font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Ubuntu'), url(http://example.com/fonts/ubuntu.woff) format('woff');
+}
+
+:root{
+    --main-color1: #0B243B;
+    --main-color2: white;
+    --contato-dados: lightgrey;
+}
+
+body { 
+    font-family: Helvetica; 
+    background-image: url("/View/Imagens/4.jpg"); 
+    background-size: cover; 
+    width: 100%; 
+    height: 100%;
+}
+
+.jumbotron img { 
+    width: 35%;
+}
+
+.jumbotron { 
+    background-color: rgba(255,255,255,0); 
+    padding: 2rem 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0%;
+}
+
+.jumbotron h5 {
+    color: grey; 
+    font-size: 130%;
+}
+
+.container-fluid {
+    width: 80%; 
+    /*height: 80%;*/ 
+    margin-left: 10%; 
+    margin-right: 10%; 
+    background-color: #0B243B; 
+    opacity: 0.8; 
+    border-radius: 10px; 
+    color: white; 
+    padding: 5% 15% 5% 15%;
+}
+
+
+.navbar-nav {
+    width: 100%; 
+    font-size: 120%; 
+    display: inline-flex; 
+    float: none; 
+}
+
+ul li { 
+    margin-left: 1%; 
+    margin-right: 1%
+}
+
+.navbar-brand img {
+    width: 15%;
+}
+
+.footer {
+    bottom: 0; 
+    width: 100%; 
+    background-color: #343A40; 
+    color: darkgrey; 
+    margin-top: 3%; 
+    text-align: center; 
+    height: 10%; 
+    padding-top: 1%; 
+    font-size: 80%;
+}
+
+.table {
+    color: white;
+}
+
+.titulo-padrao{
+    font-size: 200%; 
+    color: white; 
+    margin-bottom: 5%;
+}
+
+.titulo-secundario{
+    font-size: 200%; 
+    color: white; 
+    margin-bottom: 5%;
+}
+
+.titulo-membros{
+    font-size: 180%; 
+    color: white; 
+    margin-bottom: 5%;
+}
+
+.divisoria{
+    width: 100%; 
+    background-color: white;
+}
+
+.contato-dados{
+    color: var(--contato-dados);
+}
+
+.card-membros{
+    position: relative;
+    word-wrap: break-word;
+    background-color: #343a40!important;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+.table thead th{
+    vertical-align: middle;
+}
+
+.table td, .table th{
+    vertical-align: middle;
+}
+
+.geo-logo{
+    width: 30%;
+    margin-left: 35%; 
+    margin-top: 5%;
+}
+
+.wd-100{
+    width: 100%
+}
+
+.wd-40{
+    width: 40%;
+}
+
+.wd-10{
+    width: 10%;
+}
+
+
+.hg-100{
+    height: 100%;
+}
+
+.pd-5{
+    padding: 5% 5% 5% 5%;
+}
