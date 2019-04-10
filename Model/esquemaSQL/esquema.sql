@@ -1,60 +1,85 @@
 --CREATE DATABASE "geoma";
 
 CREATE TABLE "administrador" (
-    "idAdm" int NOT NULL,
+    "id" SERIAL NOT NULL,
     "nickname" varchar(40) NOT NULL,
-    "email" varchar(40) NOT NULL,
-    "senha" varchar(20) NOT NULL,
-    CONSTRAINT "admPK" PRIMARY KEY ("idAdm")
+    "email" varchar(60) NOT NULL,
+    "senha" varchar(40) NOT NULL,
+    CONSTRAINT "admPK" PRIMARY KEY ("id")
 );
 
 CREATE TABLE "membros" ( -- *TALVEZ UMA BIO SLA, PERGUNTAR P JEFF
-    "idMembro" int NOT NULL,
-    "nome" varchar(40) NOT NULL,
-    "email" varchar(40) NOT NULL,
-    "lattes" varchar(300) NOT NULL,
-    --"imagem" varchar(500)  DEFAULT (""),
-    --caminho da imagem
+    "id" SERIAL NOT NULL,
+    "nome" varchar(60) NOT NULL,
+    "cargo" int NOT NULL DEFAULT 0,
+    CHECK ("cargo" = 0 OR "cargo" = 1 OR "cargo" = 2) ,
+    "lattes" varchar(300),
+    "imagem" varchar(500),
     CONSTRAINT "membroPK" PRIMARY KEY ("idMembro")
 );
 
 
 CREATE TABLE "artigos" (
-    "idArtigo" int NOT NULL,
+    "id" SERIAL NOT NULL,
+    "membro" int NOT NULL,
+    CONSTRAINT "membroFK" FOREIGN KEY ("membro")
+    REFERENCES "membros" ("membro")
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
     "nome" varchar(100) NOT NULL,
     "autor" varchar(40) NOT NULL,
-    "caminho" varchar(500) NOT NULL,
-    CONSTRAINT "artigoPK" PRIMARY KEY ("idArtigo")
+    "caminho" varchar(500),
+    CONSTRAINT "artigoPK" PRIMARY KEY ("id")
 );
 
 CREATE TABLE "livro" (
-    "idLivro" int NOT NULL,
+    "id" SERIAL NOT NULL,
+    "idMembro" int NOT NULL,
+    CONSTRAINT "membroFK" FOREIGN KEY ("idMembro")
+    REFERENCES "membros" ("idMembro")
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
     "nome" varchar(100) NOT NULL,
     "autor" varchar(40) NOT NULL,
-    "caminho" varchar(500) NOT NULL,
-    CONSTRAINT "livroPK" PRIMARY KEY ("idLivro")
+    "caminho" varchar(500),
+    CONSTRAINT "livroPK" PRIMARY KEY ("id")
 );
 
 CREATE TABLE "TCCs" (
-    "idTCC" int NOT NULL,
+    "id" SERIAL NOT NULL,
+    "idMembro" int NOT NULL,
+    CONSTRAINT "membroFK" FOREIGN KEY ("idMembro")
+    REFERENCES "membros" ("idMembro")
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
     "nome" varchar(100) NOT NULL,
     "autor" varchar(40) NOT NULL,
-    "caminho" varchar(500) NOT NULL,
-    CONSTRAINT "tccPK" PRIMARY KEY ("idTCC")
+    "caminho" varchar(500),
+    CONSTRAINT "tccPK" PRIMARY KEY ("id")
 );
 
 CREATE TABLE "teses" (
-    "idTese" int NOT NULL,
+    "id" SERIAL NOT NULL,
+    "idMembro" int NOT NULL,
+    CONSTRAINT "membroFK" FOREIGN KEY ("idMembro")
+    REFERENCES "membros" ("idMembro")
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
     "nome" varchar(100) NOT NULL,
     "autor" varchar(40) NOT NULL,
-    "caminho" varchar(500) NOT NULL,
-    CONSTRAINT "tesePK" PRIMARY KEY ("idTese")
+    "caminho" varchar(500),
+    CONSTRAINT "tesePK" PRIMARY KEY ("id")
 );
 
 CREATE TABLE "dissertacoes" (
-    "idDissertacao" int NOT NULL,
+    "id" SERIAL NOT NULL,
+    "idMembro" int NOT NULL,
+    CONSTRAINT "membroFK" FOREIGN KEY ("idMembro")
+    REFERENCES "membros" ("idMembro")
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
     "nome" varchar(100) NOT NULL,
     "autor" varchar(40) NOT NULL,
-    "caminho" varchar(500) NOT NULL,
-    CONSTRAINT "dissertacaoPK" PRIMARY KEY ("idDissertacao")
+    "caminho" varchar(500),
+    CONSTRAINT "dissertacaoPK" PRIMARY KEY ("ido")
 );

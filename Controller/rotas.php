@@ -2,7 +2,8 @@
 include("Model/Crud/Model.php");
 function getPagina()
 {
-    //session_start();
+    session_set_cookie_params(25920000);
+    session_start();
  	//error_reporting(0);
 	$url = $_SERVER['REQUEST_URI'];
 	$url = strtolower(explode("?",$url)[0]);
@@ -67,22 +68,46 @@ function getPagina()
                 getFooter();
             break;
             case '/adm':
-                getHeader();
-                include('View/administrador.php');
-                getFooter();
+                if(isset($_SESSION['administrador'])){
+                    $cookie_name = "administrador";
+                    $cookie_value = $_SESSION['administrador'];
+                    setcookie($cookie_name, $cookie_value, time() + (86400 * 30));
+                    header("Location: /administracao");
+                }else{
+                    getHeader();
+                    include('View/administrador.php');
+                    getFooter();
+                }
             break;
             case '/teste':
-                function conexao(){
-                    $db = pg_connect("host=localhost; port=5433; dbname=geoma; user=postgres; password=postgres;");
-                    return $db;
-                }
-                conexao();
-                //include('Model/teste.php');
+                include('Model/teste.php');
             break;
             default:
                 include('View/404.php');
             break;
-
+            case '/logar':
+                $adm=[
+                    'nickname'=>$_POST['nickname'],
+                    'senha'=>$_POST['senha']
+                ];
+                echo $administrador=buscarAdmLogin($adm);
+                if($administrador!=null){
+                    $_SESSION['administrador'] = $_POST['nickname'];
+                    $cookie_name = "administrador";
+                    $cookie_value = $_SESSION['administrador'];
+                    setcookie($cookie_name, $cookie_value, time() + (86400 * 30));
+                    $_SESSION['administrador']=$administrador;                
+                    header("Location: /administracao");
+                }else{
+                    header("Location: /adm");
+                }
+            break;
+            case 'administracao':
+                if(isset($_SESSION['administrador'])){
+                }else{
+                    header("Location: /adm");
+                }
+            break;
     }
 
 }

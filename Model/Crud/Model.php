@@ -1,4 +1,9 @@
 <?php
-//lembrar de inserir setup em tds crud
-//model serve p colocar todos os crud
+include_once('Model/Crud/Adm.php');
+include_once('Model/Crud/Membro.php');
+include_once('Model/Crud/Artigo.php');
+include_once('Model/Crud/Livro.php');
+include_once('Model/Crud/Tcc.php');
+include_once('Model/Crud/Tese.php');
+include_once('Model/Crud/Dissertacao.php');
 ?>
