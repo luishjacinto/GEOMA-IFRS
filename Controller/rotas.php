@@ -10,61 +10,61 @@ function getPagina()
     //var_dump($url);
         switch($url){
             case '/':
-                header("Location: http://localhost:5000/inicio");
+                header("Location: /inicio");
             break;
             case '/inicio':
                 getHeader();
-                include('View/home.php');
+                include('View/Client/home.php');
                 getFooter();
             break;
             case '/artigos':
                 getHeader();
-                include('View/artigos.php');
+                include('View/Client/artigos.php');
                 getFooter();
             break;
             case '/contato':
                 getHeader();
-                include('View/contato.php');
+                include('View/Client/contato.php');
                 getFooter();
             break;
             case '/dissertacoes':
                 getHeader();
-                include('View/dissertacoes.php');
+                include('View/Client/dissertacoes.php');
                 getFooter();
             break;
             case '/galeria':
                 getHeader();
-                include('View/galeria.php');
+                include('View/Client/galeria.php');
                 getFooter();
             break;
             case '/linhas-de-pesquisa':
                 getHeader();
-                include('View/linhasDePesquisa.php');
+                include('View/Client/linhasDePesquisa.php');
                 getFooter();
             break;
             case '/livros':
                 getHeader();
-                include('View/livros.php');
+                include('View/Client/livros.php');
                 getFooter();
             break;
             case '/membros':
                 getHeader();
-                include('View/membros.php');
+                include('View/Client/membros.php');
                 getFooter();
             break;
             case '/noticias':
                 getHeader();
-                include('View/noticias.php');
+                include('View/Client/noticias.php');
                 getFooter();
             break;
             case '/tccs':
                 getHeader();
-                include('View/TCCs.php');
+                include('View/Client/TCCs.php');
                 getFooter();
             break;
             case '/teses':
                 getHeader();
-                include('View/teses.php');
+                include('View/Client/teses.php');
                 getFooter();
             break;
             case '/adm':
@@ -72,18 +72,15 @@ function getPagina()
                     $cookie_name = "administrador";
                     $cookie_value = $_SESSION['administrador'];
                     setcookie($cookie_name, $cookie_value, time() + (86400 * 30));
-                    header("Location: /administracao");
+                    header("Location: /adm/inicio");
                 }else{
                     getHeader();
-                    include('View/administrador.php');
+                    include('View/Client/administrador.php');
                     getFooter();
                 }
             break;
             case '/teste':
                 include('Model/teste.php');
-            break;
-            default:
-                include('View/404.php');
             break;
             case '/logar':
                 $adm=[
@@ -97,16 +94,20 @@ function getPagina()
                     $cookie_value = $_SESSION['administrador'];
                     setcookie($cookie_name, $cookie_value, time() + (86400 * 30));
                     $_SESSION['administrador']=$administrador;                
-                    header("Location: /administracao");
+                    header("Location: /adm/inicio");
                 }else{
                     header("Location: /adm");
                 }
             break;
-            case 'administracao':
+            case '/adm/inicio':
                 if(isset($_SESSION['administrador'])){
+
                 }else{
                     header("Location: /adm");
                 }
+            break;
+            default:
+                include('View/404.php');
             break;
     }
 

@@ -7,11 +7,10 @@ echo print_r(listarAdm(),true);
 
 $adm=
 [
-    //"id"=>"1",
     "nickname"=>"admgeoma",
     "email"=>"luishjacinto98@gmail.com",
     "senha"=>"123"
 ];
-echo alterarAdm($adm,1)." adm alterado";
+echo inserirAdm($adm)." adm inserido";
 */
 ?>
