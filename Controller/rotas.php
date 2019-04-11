@@ -72,7 +72,7 @@ function getPagina()
                     $cookie_name = "administrador";
                     $cookie_value = $_SESSION['administrador'];
                     setcookie($cookie_name, $cookie_value, time() + (86400 * 30));
-                    header("Location: /adm/inicio");
+                    header("Location: /adm_inicio");
                 }else{
                     getHeader();
                     include('View/Client/administrador.php');
@@ -94,13 +94,17 @@ function getPagina()
                     $cookie_value = $_SESSION['administrador'];
                     setcookie($cookie_name, $cookie_value, time() + (86400 * 30));
                     $_SESSION['administrador']=$administrador;                
-                    header("Location: /adm/inicio");
+                    header("Location: /adm_inicio");
                 }else{
                     header("Location: /adm");
                 }
             break;
-            case '/adm/inicio':
+            case '/adm_inicio':                    
                 if(isset($_SESSION['administrador'])){
+
+                    getHeaderAdm();
+                    include('View/Adm/inicio.php');
+                    getFooterAdm();
 
                 }else{
                     header("Location: /adm");
@@ -113,6 +117,9 @@ function getPagina()
 
 }
 
-function getHeader(){include('View/header.php');}
-function getFooter(){include('View/footer.php');}
+function getHeader(){include('View/Client/header.php');}
+function getFooter(){include('View/Client/footer.php');}
+function getHeaderAdm(){include('View/Adm/header.php');}
+function getFooterAdm(){include('View/Adm/footer.php');}
+
 ?>

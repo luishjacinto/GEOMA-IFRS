@@ -4,4 +4,3 @@
 	<h2 class="text-center titulo-padrao">ARTIGOS</h2>
 	<hr class="divisoria">
 </div>
-</html>
