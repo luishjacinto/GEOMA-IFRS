@@ -1,4 +1,4 @@
-        <footer class="footer">
+        <footer class="footer footer-adm">
         <p>Instituto Ferederal de Educação, Ciência e Tecnologia do Rio Gande do Sul, Campus Rio Grande - IFRS<br />
         Copyright © 2018 | Grupo GEOMA</p>
         <div>

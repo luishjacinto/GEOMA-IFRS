@@ -9,6 +9,7 @@ font-face {
     --main-color1: #0B243B;
     --main-color2: white;
     --contato-dados: lightgrey;
+    --color-dash: #343a40;
 }
 
 body { 
@@ -56,6 +57,14 @@ body img{
     padding: 5% 15% 5% 15%;
 }
 
+.container-fluid-adm {
+    width: 95%; 
+    margin-right: 5%; 
+    background-color: var(--color-dash); 
+    opacity: 0.8; 
+    color: white;
+    border-radius: 0px 0px 10px 10px; 
+}
 
 .navbar-nav {
     width: 100%; 
@@ -85,7 +94,7 @@ ul li {
     font-size: 80%;
 }
 
-.table {
+.table-lg {
     color: white;
 }
 
@@ -164,6 +173,50 @@ ul li {
     height: 100%;
 }
 
+.hg-90{
+    height: 90%;
+}
+
 .pd-5{
     padding: 5% 5% 5% 5%;
+}
+
+.mg-0{
+    margin: 0;
+}
+
+.table-title{
+    width: 95%; 
+    margin-right: 5%; 
+}
+
+.menu{
+    color: white;
+    background-color: var(--main-color1);
+    opacity: 0.9; 
+
+    padding: 0;
+}
+
+.footer-adm{
+    margin-top: 0%;
+}
+
+.lista{
+    height: 40%;
+    overflow-y: scroll;
+}
+
+.formsCRUD{
+    padding: 5% 15% 5% 15%;
+}
+
+.menu > ul > li{
+    background-color: var(--main-color1) !important;
+    opacity: 0.9; 
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.menu > ul > li > a{
+    color: white;
 }

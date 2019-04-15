@@ -5,9 +5,11 @@ function getPagina()
     session_set_cookie_params(25920000);
     session_start();
  	//error_reporting(0);
-	$url = $_SERVER['REQUEST_URI'];
-	$url = strtolower(explode("?",$url)[0]);
+	$path = $_SERVER['REQUEST_URI'];
+	$url = strtolower(explode("?",$path)[0]);
     //var_dump($url);
+    //var_dump(explode("?",$path)[1]);
+
         switch($url){
             case '/':
                 header("Location: /inicio");
@@ -98,12 +100,41 @@ function getPagina()
                 }else{
                     header("Location: /adm");
                 }
+            break;  
+            case '/deslogar':
+                session_destroy();
+                header("Location: /adm");
             break;
             case '/adm_inicio':                    
                 if(isset($_SESSION['administrador'])){
 
                     getHeaderAdm();
                     include('View/Adm/inicio.php');
+                    getFooterAdm();
+
+                }else{
+                    header("Location: /adm");
+                }
+            break;
+            case '/adm_membros':                    
+                if(isset($_SESSION['administrador'])){
+                    function getData(){
+                        echo "oi";
+                    }
+                    getHeaderAdm();
+                    include('View/Adm/membros.php');
+                    getFooterAdm();
+                    
+                    
+                }else{
+                    header("Location: /adm");
+                }
+            break;
+            case '/adm_noticias':                    
+                if(isset($_SESSION['administrador'])){
+
+                    getHeaderAdm();
+                    //include('View/Adm/membros.php');
                     getFooterAdm();
 
                 }else{
