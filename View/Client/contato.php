@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <title>Contato</title>
+<?php include('View/Client/header.php'); ?>
 <div class="container-fluid contato">
 	<h2 class="text-center titulo-padrao">ENDEREÇO / CONTATO</h2>
 	<hr class="divisoria">
@@ -22,3 +23,4 @@
 		<hr>
 		E-MAIL: miguel.albuquerque@riogrande.ifrs.edu.br
 </div>
+<?php include('View/Client/footer.php'); ?>

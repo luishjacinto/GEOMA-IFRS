@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <title>Administração Login</title>
-
+<?php include('View/Client/header.php'); ?>
 <div class="container-fluid">
     <h2 class="text-center titulo-padrao">Login</h2>
     <form method="POST" action="logar">
@@ -15,3 +15,5 @@
         <button type="submit" class="btn btn-primary">Logar</button>
     </form>
 </div>
+
+<?php include('View/Client/footer.php'); ?>

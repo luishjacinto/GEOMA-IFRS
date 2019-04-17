@@ -15,9 +15,8 @@ CREATE TABLE "membros" ( -- *TALVEZ UMA BIO SLA, PERGUNTAR P JEFF
     CHECK ("cargo" = 0 OR "cargo" = 1 OR "cargo" = 2) ,
     "lattes" varchar(300),
     "imagem" varchar(500),
-    CONSTRAINT "membroPK" PRIMARY KEY ("idMembro")
+    CONSTRAINT "membroPK" PRIMARY KEY ("id")
 );
-
 
 CREATE TABLE "artigos" (
     "id" SERIAL NOT NULL,
@@ -36,7 +35,7 @@ CREATE TABLE "livro" (
     "id" SERIAL NOT NULL,
     "idMembro" int NOT NULL,
     CONSTRAINT "membroFK" FOREIGN KEY ("idMembro")
-    REFERENCES "membros" ("idMembro")
+    REFERENCES "membros" ("id")
     ON DELETE CASCADE
     ON UPDATE CASCADE,
     "nome" varchar(100) NOT NULL,
@@ -49,7 +48,7 @@ CREATE TABLE "TCCs" (
     "id" SERIAL NOT NULL,
     "idMembro" int NOT NULL,
     CONSTRAINT "membroFK" FOREIGN KEY ("idMembro")
-    REFERENCES "membros" ("idMembro")
+    REFERENCES "membros" ("id")
     ON DELETE CASCADE
     ON UPDATE CASCADE,
     "nome" varchar(100) NOT NULL,
@@ -62,7 +61,7 @@ CREATE TABLE "teses" (
     "id" SERIAL NOT NULL,
     "idMembro" int NOT NULL,
     CONSTRAINT "membroFK" FOREIGN KEY ("idMembro")
-    REFERENCES "membros" ("idMembro")
+    REFERENCES "membros" ("id")
     ON DELETE CASCADE
     ON UPDATE CASCADE,
     "nome" varchar(100) NOT NULL,
@@ -75,7 +74,7 @@ CREATE TABLE "dissertacoes" (
     "id" SERIAL NOT NULL,
     "idMembro" int NOT NULL,
     CONSTRAINT "membroFK" FOREIGN KEY ("idMembro")
-    REFERENCES "membros" ("idMembro")
+    REFERENCES "membros" ("id")
     ON DELETE CASCADE
     ON UPDATE CASCADE,
     "nome" varchar(100) NOT NULL,

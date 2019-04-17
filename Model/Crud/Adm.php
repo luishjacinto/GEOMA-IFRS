@@ -17,6 +17,13 @@ function buscarAdmLogin($adm){
     return R::findOne('administrador','nickname=? AND senha=?',[$adm['nickname'],$adm['senha']]);
 }
 
+function verificarAdmLogin($adm){
+    $administrador = R::findOne('administrador','nickname=? AND senha=?',[$adm['nickname'],$adm['senha']]);
+    if(isset($administrador)){
+        return $administrador;
+    }
+}
+
 
 function listarAdm(){
     $administradores = R::findAll("administrador"," ORDER BY id");

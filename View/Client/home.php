@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <title>Geoma</title>
+<?php include('View/Client/header.php'); ?>
 <div class="container-fluid home">
 	<h2 class="text-center titulo-padrao">SOBRE O GEOMA </h2>
 	<p class="text-center"> O Grupo de Pesquisas Geotecnologias e Meio
@@ -11,3 +12,4 @@
 		<img class="rounded-circle geo-logo" src="View/Imagens/geo.jpg" alt="Geoprocessamento">
 	</a>
 </div>
+<?php include('View/Client/footer.php'); ?>

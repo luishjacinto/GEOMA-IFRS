@@ -1,5 +1,6 @@
 <?php
 include("Model/Crud/Model.php");
+include("Controller/funcoes/funcoes.php");
 function getPagina()
 {
     session_set_cookie_params(25920000);
@@ -8,135 +9,118 @@ function getPagina()
 	$path = $_SERVER['REQUEST_URI'];
 	$url = strtolower(explode("?",$path)[0]);
     //var_dump($url);
-    //var_dump(explode("?",$path)[1]);
+    if(isset(explode("?",$path)[1])){
+        $id = explode("?",$path)[1];
+    }
 
         switch($url){
             case '/':
                 header("Location: /inicio");
             break;
             case '/inicio':
-                getHeader();
                 include('View/Client/home.php');
-                getFooter();
             break;
             case '/artigos':
-                getHeader();
                 include('View/Client/artigos.php');
-                getFooter();
             break;
             case '/contato':
-                getHeader();
                 include('View/Client/contato.php');
-                getFooter();
             break;
             case '/dissertacoes':
-                getHeader();
                 include('View/Client/dissertacoes.php');
-                getFooter();
             break;
             case '/galeria':
-                getHeader();
                 include('View/Client/galeria.php');
-                getFooter();
             break;
             case '/linhas-de-pesquisa':
-                getHeader();
                 include('View/Client/linhasDePesquisa.php');
-                getFooter();
             break;
             case '/livros':
-                getHeader();
                 include('View/Client/livros.php');
-                getFooter();
             break;
             case '/membros':
-                getHeader();
                 include('View/Client/membros.php');
-                getFooter();
             break;
             case '/noticias':
-                getHeader();
                 include('View/Client/noticias.php');
-                getFooter();
             break;
             case '/tccs':
-                getHeader();
                 include('View/Client/TCCs.php');
-                getFooter();
             break;
             case '/teses':
-                getHeader();
                 include('View/Client/teses.php');
-                getFooter();
             break;
             case '/adm':
                 if(isset($_SESSION['administrador'])){
-                    $cookie_name = "administrador";
-                    $cookie_value = $_SESSION['administrador'];
-                    setcookie($cookie_name, $cookie_value, time() + (86400 * 30));
-                    header("Location: /adm_inicio");
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){
+                        redirectAdm();
+                    }
                 }else{
-                    getHeader();
                     include('View/Client/administrador.php');
-                    getFooter();
                 }
             break;
             case '/teste':
                 include('Model/teste.php');
             break;
             case '/logar':
-                $adm=[
-                    'nickname'=>$_POST['nickname'],
-                    'senha'=>$_POST['senha']
-                ];
-                echo $administrador=buscarAdmLogin($adm);
-                if($administrador!=null){
-                    $_SESSION['administrador'] = $_POST['nickname'];
-                    $cookie_name = "administrador";
-                    $cookie_value = $_SESSION['administrador'];
-                    setcookie($cookie_name, $cookie_value, time() + (86400 * 30));
-                    $_SESSION['administrador']=$administrador;                
-                    header("Location: /adm_inicio");
-                }else{
-                    header("Location: /adm");
-                }
+                logar();
             break;  
             case '/deslogar':
-                session_destroy();
-                header("Location: /adm");
+                deslogar();
             break;
-            case '/adm_inicio':                    
+            case '/adm_inicio':
                 if(isset($_SESSION['administrador'])){
-
-                    getHeaderAdm();
-                    include('View/Adm/inicio.php');
-                    getFooterAdm();
-
-                }else{
-                    header("Location: /adm");
-                }
-            break;
-            case '/adm_membros':                    
-                if(isset($_SESSION['administrador'])){
-                    function getData(){
-                        echo "oi";
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){
+                        include('View/Adm/inicio.php');
                     }
-                    getHeaderAdm();
-                    include('View/Adm/membros.php');
-                    getFooterAdm();
-                    
-                    
                 }else{
                     header("Location: /adm");
                 }
             break;
+            //MEMBROS
+            case '/adm_membros':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){
+                        $data = getMembros();
+
+                        include('View/Adm/membros.php');
+                    }
+                }else{
+                    header("Location: /adm");
+                }
+            break;
+            case '/editar_membro':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){
+                        //pagina de form para edição
+                    }
+                }else{
+                    header("Location: /adm");
+                }
+            break;
+            case '/deletar_membro':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){
+                        //func de deletar                    
+                        header("Location: /adm_membros");
+                        deletarMembro($id);
+                    }          
+                }else{
+                    header("Location: /adm");
+                }  
+            break;
+            //NOTICIAS
             case '/adm_noticias':                    
                 if(isset($_SESSION['administrador'])){
-
-                    getHeaderAdm();
-                    //include('View/Adm/membros.php');
-                    getFooterAdm();
-
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){
+                        include('View/Adm/membros.php');
+                    }
                 }else{
                     header("Location: /adm");
                 }
@@ -148,8 +132,6 @@ function getPagina()
 
 }
 
-function getHeader(){include('View/Client/header.php');}
-function getFooter(){include('View/Client/footer.php');}
 function getHeaderAdm(){include('View/Adm/header.php');}
 function getFooterAdm(){include('View/Adm/footer.php');}
 

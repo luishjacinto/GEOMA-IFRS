@@ -22,7 +22,7 @@ function listarMembros(){
     	$listaMembros[$aux]=R::findOne('membros',"id=?",[$membro["id"]]);
     	$aux++;
     }
-    return json_encode($listaMembros);
+    return ($listaMembros);
 }
 
 function alterarMembro($membro,$id){

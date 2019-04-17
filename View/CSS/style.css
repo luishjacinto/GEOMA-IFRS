@@ -63,7 +63,7 @@ body img{
     background-color: var(--color-dash); 
     opacity: 0.8; 
     color: white;
-    border-radius: 0px 0px 10px 10px; 
+    border-radius: 10px 10px 10px 10px; 
 }
 
 .navbar-nav {
@@ -219,4 +219,28 @@ ul li {
 
 .menu > ul > li > a{
     color: white;
+}
+
+
+.table1 th{
+    max-width: 20%;
+}
+
+.table1 td{
+    max-width: 20%;
+}
+
+.mg-20{
+    margin-right: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--color-dash);
+}
+::-webkit-scrollbar {
+    width: 6px;
+    background: var(--color-dash);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--main-color1);
 }
