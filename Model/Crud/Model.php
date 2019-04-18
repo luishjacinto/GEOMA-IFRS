@@ -6,4 +6,5 @@ include_once('Model/Crud/Livro.php');
 include_once('Model/Crud/Tcc.php');
 include_once('Model/Crud/Tese.php');
 include_once('Model/Crud/Dissertacao.php');
+include_once('Model/Crud/Imagem.php');
 ?>

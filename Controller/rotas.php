@@ -92,6 +92,16 @@ function getPagina()
                     header("Location: /adm");
                 }
             break;
+            case '/criar_membro':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){
+                        criarMembro();
+                    }
+                }else{
+                    header("Location: /adm");
+                }
+            break;
             case '/editar_membro':
                 if(isset($_SESSION['administrador'])){
                     $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
@@ -106,7 +116,6 @@ function getPagina()
                 if(isset($_SESSION['administrador'])){
                     $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
                     if(isset($administradorVerificado)){
-                        //func de deletar                    
                         header("Location: /adm_membros");
                         deletarMembro($id);
                     }          
