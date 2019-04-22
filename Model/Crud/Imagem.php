@@ -34,12 +34,25 @@ function salvarImagem($pasta){
         if (move_uploaded_file($_FILES['arquivo']['tmp_name'], $_UP['pasta'].$nome_final)) {
             return $_UP['pasta'].$nome_final;
         } else {
-            return ''; //IMAGEM PADRAO
+            return $_UP['pasta'].'default-pic.png'; //IMAGEM PADRAO
         }
         
     }else{
         echo 'Pasta não permitida!';
     }
+}
+
+function checarAlteracao($pasta,$atual){
+    if($_FILES['arquivo']['name']!=""){
+        if($atual != 'Armazenamento/Membros/default-pic.png'){
+            apagarImagem($atual);
+        }
+        return salvarImagem($pasta);
+    }
+}
+
+function apagarImagem($pasta){
+    unlink($pasta);
 }
 
 ?>

@@ -61,7 +61,7 @@ function getPagina()
                 }
             break;
             case '/teste':
-                include('Model/teste.php');
+                //include('Model/teste.php');
             break;
             case '/logar':
                 logar();
@@ -105,8 +105,19 @@ function getPagina()
             case '/editar_membro':
                 if(isset($_SESSION['administrador'])){
                     $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
-                    if(isset($administradorVerificado)){
-                        //pagina de form para edição
+                    if(isset($administradorVerificado)){                        
+                        $data = buscarFormMembro($id);
+                        include('View/Adm/formMembros.php');
+                    }
+                }else{
+                    header("Location: /adm");
+                }
+            break;
+            case '/atualizar_membro':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){                        
+                        atualizarMembro($id);
                     }
                 }else{
                     header("Location: /adm");
