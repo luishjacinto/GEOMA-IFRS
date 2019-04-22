@@ -5,13 +5,14 @@
 <div class="col-10 pd-0 main-section">
 	<br>
 	<h3 class="text-center">Membros</h3>
-
 	<div class="container-fluid-adm lista radiusLeft">
 		<table class="table1 table table-striped table-dark text-center">
 			<?php echo $data ?>
 		</table>
 	</div>
 	<br>
+
+	<h3 class="text-center">Adicionar Membro</h3>
 	<div class="container-fluid-adm formsCRUD">
 		<form method="POST" action="criar_membro" enctype="multipart/form-data">
 			<div class="form-group">

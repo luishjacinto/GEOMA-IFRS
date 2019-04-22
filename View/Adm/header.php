@@ -24,7 +24,7 @@
 				<li class="list-group-item">
 					<a class="dropdown-toggle" href="#" data-toggle="dropdown">Produção Científica</a>
 					<div class="dropdown-menu">
-						<a class="dropdown-item" href="">Artigos</a>
+						<a class="dropdown-item" href="adm_artigos">Artigos</a>
 						<a class="dropdown-item" href="">Livros</a>
 						<a class="dropdown-item" href="">TCCs</a>
 						<a class="dropdown-item" href="">Teses</a>

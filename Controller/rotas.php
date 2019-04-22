@@ -139,11 +139,66 @@ function getPagina()
                 if(isset($_SESSION['administrador'])){
                     $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
                     if(isset($administradorVerificado)){
-                        include('View/Adm/membros.php');
+                        //include('View/Adm/membros.php');
                     }
                 }else{
                     header("Location: /adm");
                 }
+            break;
+            //ARTIGOS
+            case '/adm_artigos':
+            if(isset($_SESSION['administrador'])){
+                $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                if(isset($administradorVerificado)){
+                    //$data = getArtigos();
+
+                    include('View/Adm/artigos.php');
+                }
+            }else{
+                header("Location: /adm");
+            }
+            break;
+            case '/criar_artigo':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){
+                        criarArtigo();
+                    }
+                }else{
+                    header("Location: /adm");
+                }
+            break;
+            case '/editar_artigo':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){                        
+                        $data = buscarFormArtigo($id);
+                        //include('View/Adm/formMembros.php');
+                    }
+                }else{
+                    header("Location: /adm");
+                }
+            break;
+            case '/atualizar_artigo':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){                        
+                        atualizarArtigo($id);
+                    }
+                }else{
+                    header("Location: /adm");
+                }
+            break;
+            case '/deletar_artigo':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){
+                        header("Location: /adm_artigos");
+                        deletarArtigo($id);
+                    }          
+                }else{
+                    header("Location: /adm");
+                }  
             break;
             default:
                 include('View/404.php');
