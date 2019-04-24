@@ -7,7 +7,7 @@ function atualizarTcc($id){
         "caminho"=>trim($_POST["caminho"]),
         "membro"=> $_POST["membro"]
     ];
-    alterartcc($tcc,$id);
+    alterarTcc($tcc,$id);
 
     header("Location: /adm_tccs");
 }
