@@ -1,12 +1,3 @@
-// site curso de geo
-// saber oq vai em membros
-// quem add as noticias, de onde elas vem
-// oq é linhas de pesquisa
-// oq um artigo tem q ter
-// livros? como quer q eu disponibilize*
-// tccs? *
-// teses? *
-// dissertações *
-// as imagens da galeria precisam de q?
-// login de adm
-// crud p tds tipos de dados
+// SABER OQ VAI SER O LINHAS DE PESQUISA (criar esquema sql e pa)
+// DISERTAÇÕES TESES CRUD
+// GALERIA E NOTICIAS CRUD
