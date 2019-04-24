@@ -14,7 +14,7 @@ function buscarArtigo($id){
     return R::findOne('artigos','id=?',[$id]);
 }
 
-function listarArtigo(){
+function listarArtigos(){
     $artigos = R::findAll("artigos"," ORDER BY id");
     $aux=0;
     $listaArtigos=[];
@@ -22,7 +22,7 @@ function listarArtigo(){
     	$listaArtigos[$aux]=R::findOne('artigos',"id=?",[$artigo["id"]]);
     	$aux++;
     }
-    return json_encode($listaArtigos);
+    return $listaArtigos;
 }
 
 function alterarArtigo($artigo,$id){

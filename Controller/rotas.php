@@ -150,8 +150,8 @@ function getPagina()
             if(isset($_SESSION['administrador'])){
                 $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
                 if(isset($administradorVerificado)){
-                    //$data = getArtigos();
-
+                    $data = getArtigos();
+                    $membros = getSelectOptions();
                     include('View/Adm/artigos.php');
                 }
             }else{
@@ -173,7 +173,7 @@ function getPagina()
                     $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
                     if(isset($administradorVerificado)){                        
                         $data = buscarFormArtigo($id);
-                        //include('View/Adm/formMembros.php');
+                        include('View/Adm/formArtigos.php');
                     }
                 }else{
                     header("Location: /adm");

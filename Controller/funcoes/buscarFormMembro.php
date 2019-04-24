@@ -2,7 +2,7 @@
 
 function buscarFormMembro($id){
     $membro = buscarMembro($id);
-    $select = montaSelect($membro['cargo']);
+    $select = montaCargos($membro['cargo']);
 
     $form = '<form method="POST" action="atualizar_membro?'.$membro['id'].'" enctype="multipart/form-data">'
                 .'<div class="form-group">'
@@ -24,19 +24,6 @@ function buscarFormMembro($id){
             .'</form>';
 
     return $form;
-}
-
-function montaSelect($cargo) {
-    $cargos = array('Pesquisador', 'Luis', 'Traficante');
-    $codSegundoCargo = (((int) $cargo + 1) % 3);
-    $codTerceiroCargo = (((int) $cargo + 2) % 3);
-
-    return '<select name="cargo" class="form-control form-control-sm" required>'
-                .'<option value="'.$cargo.'" selected> '. $cargos[$cargo].' </option>'
-                .'<option value="'.$codSegundoCargo.'"> '. $cargos[$codSegundoCargo] .' </option>'
-                .'<option value="'.$codTerceiroCargo.'"> '. $cargos[$codTerceiroCargo] .' </option>'
-            .'</select>';
-
 }
 
 ?>

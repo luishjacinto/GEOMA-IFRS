@@ -22,7 +22,7 @@ CREATE TABLE "artigos" (
     "id" SERIAL NOT NULL,
     "membro" int NOT NULL,
     CONSTRAINT "membroFK" FOREIGN KEY ("membro")
-    REFERENCES "membros" ("membro")
+    REFERENCES "membros" ("id")
     ON DELETE CASCADE
     ON UPDATE CASCADE,
     "nome" varchar(100) NOT NULL,
