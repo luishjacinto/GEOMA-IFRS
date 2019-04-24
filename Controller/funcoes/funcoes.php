@@ -26,5 +26,5 @@ include('Controller/funcoes/Adm/Update/atualizarLivro.php');
 include('Controller/funcoes/Adm/Create/criarTcc.php');  
 include('Controller/funcoes/Adm/Read/getTcc.php');
 include('Controller/funcoes/Adm/Read/buscarFormTcc.php');  
-include('Controller/funcoes/Adm/Update/atualizarTcc.php');  
+include('Controller/funcoes/Adm/Update/atualizarTcc.php');
 ?>
