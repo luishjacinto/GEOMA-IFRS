@@ -17,11 +17,11 @@
 		<form method="POST" action="criar_livro" enctype="multipart/form-data">
 			<div class="form-group">
 				<label for="nome">Nome</label>
-				<input type="text" class="form-control" name="nome" placeholder="Insira o nome do livro" required>
+				<input type="text" class="form-control" name="nome" placeholder="Insira o nome do Livro" required>
 			</div>
 			<div class="form-group">
 				<label for="caminho">Link para Livro</label>
-				<input type="text" class="form-control" name="caminho" placeholder="Insira o link do livro" required>
+				<input type="text" class="form-control" name="caminho" placeholder="Insira o link do Livro" required>
 			</div>
 			<label for="membro">Autor</label>
 			<select name="membro" class="form-control form-control-sm" required>
