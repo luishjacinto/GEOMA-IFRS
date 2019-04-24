@@ -5,7 +5,6 @@ function inserirArtigo($artigo){
     $novoArtigo=R::dispense('artigos');
     $novoArtigo["membro"]=$artigo['membro'];
     $novoArtigo['nome']=$artigo['nome'];
-    $novoArtigo['autor']=$artigo['autor'];
     $novoArtigo['caminho']=$artigo['caminho'];
     $x = R::store($novoArtigo);
 }
@@ -29,7 +28,6 @@ function alterarArtigo($artigo,$id){
     $artigoAtualizado=R::load("artigos",$id);
     $artigoAtualizado['membro']=$artigo['membro'];    
     $artigoAtualizado["nome"]=$artigo['nome'];
-    $artigoAtualizado['autor']=$artigo['autor'];
     $artigoAtualizado['caminho']=$artigo['caminho'];
     return R::store($artigoAtualizado);
 }

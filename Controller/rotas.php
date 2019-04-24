@@ -107,7 +107,7 @@ function getPagina()
                     $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
                     if(isset($administradorVerificado)){                        
                         $data = buscarFormMembro($id);
-                        include('View/Adm/formMembros.php');
+                        include('View/Adm/Forms/formMembros.php');
                     }
                 }else{
                     header("Location: /adm");
@@ -173,7 +173,7 @@ function getPagina()
                     $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
                     if(isset($administradorVerificado)){                        
                         $data = buscarFormArtigo($id);
-                        include('View/Adm/formArtigos.php');
+                        include('View/Adm/Forms/formArtigos.php');
                     }
                 }else{
                     header("Location: /adm");
@@ -200,6 +200,62 @@ function getPagina()
                     header("Location: /adm");
                 }  
             break;
+            //LIVROS
+            case '/adm_livros':
+            if(isset($_SESSION['administrador'])){
+                $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                if(isset($administradorVerificado)){
+                    $data = getLivros();
+                    $membros = getSelectOptions();
+                    include('View/Adm/livros.php');
+                }
+            }else{
+                header("Location: /adm");
+            }
+            break;
+            case '/criar_livro':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){
+                        criarLivro();
+                    }
+                }else{
+                    header("Location: /adm");
+                }
+            break;
+            case '/editar_livro':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){                        
+                        $data = buscarFormLivro($id);
+                        include('View/Adm/Forms/formLivros.php');
+                    }
+                }else{
+                    header("Location: /adm");
+                }
+            break;
+            case '/atualizar_livro':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){                        
+                        atualizarLivro($id);
+                    }
+                }else{
+                    header("Location: /adm");
+                }
+            break;
+            case '/deletar_livro':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){
+                        header("Location: /adm_livros");
+                        deletarLivro($id);
+                    }          
+                }else{
+                    header("Location: /adm");
+                }  
+            break;
+            //DEFAULT
             default:
                 include('View/404.php');
             break;

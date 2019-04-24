@@ -26,7 +26,6 @@ CREATE TABLE "artigos" (
     ON DELETE CASCADE
     ON UPDATE CASCADE,
     "nome" varchar(100) NOT NULL,
-    "autor" varchar(40) NOT NULL,
     "caminho" varchar(500),
     CONSTRAINT "artigoPK" PRIMARY KEY ("id")
 );
@@ -39,7 +38,6 @@ CREATE TABLE "livro" (
     ON DELETE CASCADE
     ON UPDATE CASCADE,
     "nome" varchar(100) NOT NULL,
-    "autor" varchar(40) NOT NULL,
     "caminho" varchar(500),
     CONSTRAINT "livroPK" PRIMARY KEY ("id")
 );
@@ -52,7 +50,6 @@ CREATE TABLE "TCCs" (
     ON DELETE CASCADE
     ON UPDATE CASCADE,
     "nome" varchar(100) NOT NULL,
-    "autor" varchar(40) NOT NULL,
     "caminho" varchar(500),
     CONSTRAINT "tccPK" PRIMARY KEY ("id")
 );
@@ -65,7 +62,6 @@ CREATE TABLE "teses" (
     ON DELETE CASCADE
     ON UPDATE CASCADE,
     "nome" varchar(100) NOT NULL,
-    "autor" varchar(40) NOT NULL,
     "caminho" varchar(500),
     CONSTRAINT "tesePK" PRIMARY KEY ("id")
 );
@@ -78,7 +74,6 @@ CREATE TABLE "dissertacoes" (
     ON DELETE CASCADE
     ON UPDATE CASCADE,
     "nome" varchar(100) NOT NULL,
-    "autor" varchar(40) NOT NULL,
     "caminho" varchar(500),
     CONSTRAINT "dissertacaoPK" PRIMARY KEY ("ido")
 );

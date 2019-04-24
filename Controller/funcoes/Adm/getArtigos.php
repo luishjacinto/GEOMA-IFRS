@@ -18,7 +18,7 @@ function getArtigos(){
         $lista .= '<tr>'
             .'<td scope="row">'.$artigo['id'].'</td>'
             .'<td>'.$artigo['nome'].'</td>'
-            .'<td>'.$artigo['autor'].'</td>'
+            .'<td>'.buscarMembro($artigo['membro'])['nome'].'</td>'
             .'<td>'.$artigo['caminho'].'</td>'
             .'<td>'
                 .'<a href="/editar_artigo?'.$artigo['id'].'" class="mg-20"><i class=material-icons>edit</i></a>'

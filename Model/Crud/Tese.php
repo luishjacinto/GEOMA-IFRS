@@ -5,7 +5,6 @@ function inserirTese($tese){
     $novoTese=R::dispense('teses');
     $novoTese["membro"]=$tese['membro'];
     $novoTese['nome']=$tese['nome'];
-    $novoTese['autor']=$tese['autor'];
     $novoTese['caminho']=$tese['caminho'];
     $x = R::store($novoTese);
 }
@@ -14,7 +13,7 @@ function buscarTese($id){
     return R::findOne('teses','id=?',[$id]);
 }
 
-function listarTese(){
+function listarTeses(){
     $teses = R::findAll("teses"," ORDER BY id");
     $aux=0;
     $listaTeses=[];
@@ -22,14 +21,13 @@ function listarTese(){
     	$listaTeses[$aux]=R::findOne('teses',"id=?",[$tese["id"]]);
     	$aux++;
     }
-    return json_encode($listaTeses);
+    return $listaTeses;
 }
 
 function alterarTese($tese,$id){
     $teseAtualizado=R::load("teses",$id);
     $teseAtualizado['membro']=$tese['membro'];    
     $teseAtualizado["nome"]=$tese['nome'];
-    $teseAtualizado['autor']=$tese['autor'];
     $teseAtualizado['caminho']=$tese['caminho'];
     return R::store($teseAtualizado);
 }

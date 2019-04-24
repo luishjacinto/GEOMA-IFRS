@@ -5,7 +5,6 @@ function inserirDissertacao($dissertacao){
     $novoDissertacao=R::dispense('dissertacoes');
     $novoDissertacao["membro"]=$dissertacao['membro'];
     $novoDissertacao['nome']=$dissertacao['nome'];
-    $novoDissertacao['autor']=$dissertacao['autor'];
     $novoDissertacao['caminho']=$dissertacao['caminho'];
     $x = R::store($novoDissertacao);
 }
@@ -14,22 +13,21 @@ function buscarDissertacao($id){
     return R::findOne('dissertacoes','id=?',[$id]);
 }
 
-function listarDissertacao(){
-    $dissertacaos = R::findAll("dissertacoes"," ORDER BY id");
+function listarDissertacoes(){
+    $dissertacoes = R::findAll("dissertacoes"," ORDER BY id");
     $aux=0;
-    $listaDissertacaos=[];
+    $listaDissertacoess=[];
     foreach ($dissertacaos as $dissertacao) {
-    	$listaDissertacaos[$aux]=R::findOne('dissertacoes',"id=?",[$dissertacao["id"]]);
+    	$listaDissertacoes[$aux]=R::findOne('dissertacoes',"id=?",[$dissertacao["id"]]);
     	$aux++;
     }
-    return json_encode($listaDissertacaos);
+    return $listaDissertacoes;
 }
 
 function alterarDissertacao($dissertacao,$id){
     $dissertacaoAtualizado=R::load("dissertacoes",$id);
     $dissertacaoAtualizado['membro']=$dissertacao['membro'];    
     $dissertacaoAtualizado["nome"]=$dissertacao['nome'];
-    $dissertacaoAtualizado['autor']=$dissertacao['autor'];
     $dissertacaoAtualizado['caminho']=$dissertacao['caminho'];
     return R::store($dissertacaoAtualizado);
 }
