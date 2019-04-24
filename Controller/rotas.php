@@ -80,6 +80,8 @@ function getPagina()
                 }
             break;
             //MEMBROS
+            //////////////////////////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////////////
             case '/adm_membros':
                 if(isset($_SESSION['administrador'])){
                     $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
@@ -135,6 +137,8 @@ function getPagina()
                 }  
             break;
             //NOTICIAS
+            //////////////////////////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////////////
             case '/adm_noticias':                    
                 if(isset($_SESSION['administrador'])){
                     $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
@@ -146,6 +150,8 @@ function getPagina()
                 }
             break;
             //ARTIGOS
+            //////////////////////////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////////////
             case '/adm_artigos':
             if(isset($_SESSION['administrador'])){
                 $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
@@ -201,6 +207,8 @@ function getPagina()
                 }  
             break;
             //LIVROS
+            //////////////////////////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////////////
             case '/adm_livros':
             if(isset($_SESSION['administrador'])){
                 $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
@@ -250,6 +258,63 @@ function getPagina()
                     if(isset($administradorVerificado)){
                         header("Location: /adm_livros");
                         deletarLivro($id);
+                    }          
+                }else{
+                    header("Location: /adm");
+                }  
+            break;
+            //TCCs
+            //////////////////////////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////////////
+            case '/adm_tccs':
+            if(isset($_SESSION['administrador'])){
+                $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                if(isset($administradorVerificado)){
+                    $data = getTccs();
+                    $membros = getSelectOptions();
+                    include('View/Adm/tccs.php');
+                }
+            }else{
+                header("Location: /adm");
+            }
+            break;
+            case '/criar_tcc':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){
+                        criarTcc();
+                    }
+                }else{
+                    header("Location: /adm");
+                }
+            break;
+            case '/editar_tcc':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){                        
+                        $data = buscarFormTcc($id);
+                        include('View/Adm/Forms/formTccs.php');
+                    }
+                }else{
+                    header("Location: /adm");
+                }
+            break;
+            case '/atualizar_tcc':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){                        
+                        atualizarTcc($id);
+                    }
+                }else{
+                    header("Location: /adm");
+                }
+            break;
+            case '/deletar_tcc':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){
+                        header("Location: /adm_tccs");
+                        deletarTcc($id);
                     }          
                 }else{
                     header("Location: /adm");

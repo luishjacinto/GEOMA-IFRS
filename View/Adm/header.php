@@ -26,7 +26,7 @@
 					<div class="dropdown-menu">
 						<a class="dropdown-item" href="adm_artigos">Artigos</a>
 						<a class="dropdown-item" href="adm_livros">Livros</a>
-						<a class="dropdown-item" href="">TCCs</a>
+						<a class="dropdown-item" href="adm_tccs">TCCs</a>
 						<a class="dropdown-item" href="">Teses</a>
 						<a class="dropdown-item" href="">Dissertações</a>
 					</div>

@@ -7,6 +7,7 @@ include('Controller/funcoes/Adm/getSelectOptions.php');
 include('Controller/funcoes/Adm/montaCargos.php');
 include('Controller/funcoes/Adm/montaMembros.php');
 
+//CRUD
 include('Controller/funcoes/Adm/criarMembro.php');
 include('Controller/funcoes/Adm/getMembros.php');
 include('Controller/funcoes/Adm/buscarFormMembro.php');
@@ -22,5 +23,8 @@ include('Controller/funcoes/Adm/getLivros.php');
 include('Controller/funcoes/Adm/buscarFormLivro.php');  
 include('Controller/funcoes/Adm/atualizarLivro.php');  
 
-
+include('Controller/funcoes/Adm/criarTcc.php');  
+include('Controller/funcoes/Adm/getTcc.php');
+include('Controller/funcoes/Adm/buscarFormTcc.php');  
+include('Controller/funcoes/Adm/atualizarTcc.php');  
 ?>
