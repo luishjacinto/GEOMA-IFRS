@@ -24,7 +24,17 @@ include('Controller/funcoes/Adm/Read/buscarFormLivro.php');
 include('Controller/funcoes/Adm/Update/atualizarLivro.php');  
 
 include('Controller/funcoes/Adm/Create/criarTcc.php');  
-include('Controller/funcoes/Adm/Read/getTcc.php');
+include('Controller/funcoes/Adm/Read/getTccs.php');
 include('Controller/funcoes/Adm/Read/buscarFormTcc.php');  
 include('Controller/funcoes/Adm/Update/atualizarTcc.php');
+
+include('Controller/funcoes/Adm/Create/criarTese.php');  
+include('Controller/funcoes/Adm/Read/getTeses.php');
+include('Controller/funcoes/Adm/Read/buscarFormTese.php');  
+include('Controller/funcoes/Adm/Update/atualizarTese.php');
+
+include('Controller/funcoes/Adm/Create/criarDissertacao.php');  
+include('Controller/funcoes/Adm/Read/getDissertacoes.php');
+include('Controller/funcoes/Adm/Read/buscarFormDissertacao.php');  
+include('Controller/funcoes/Adm/Update/atualizarDissertacao.php');
 ?>

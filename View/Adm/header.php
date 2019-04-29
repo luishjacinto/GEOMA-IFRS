@@ -27,8 +27,8 @@
 						<a class="dropdown-item" href="adm_artigos">Artigos</a>
 						<a class="dropdown-item" href="adm_livros">Livros</a>
 						<a class="dropdown-item" href="adm_tccs">TCCs</a>
-						<a class="dropdown-item" href="">Teses</a>
-						<a class="dropdown-item" href="">Dissertações</a>
+						<a class="dropdown-item" href="adm_teses">Teses</a>
+						<a class="dropdown-item" href="adm_dissertacoes">Dissertações</a>
 					</div>
 				</li>
 				<li class="list-group-item"><a href="deslogar"><i class="material-icons">exit_to_app</i></a></li>

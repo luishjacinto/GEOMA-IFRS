@@ -16,8 +16,8 @@ function buscarDissertacao($id){
 function listarDissertacoes(){
     $dissertacoes = R::findAll("dissertacoes"," ORDER BY id");
     $aux=0;
-    $listaDissertacoess=[];
-    foreach ($dissertacaos as $dissertacao) {
+    $listaDissertacoes=[];
+    foreach ($dissertacoes as $dissertacao) {
     	$listaDissertacoes[$aux]=R::findOne('dissertacoes',"id=?",[$dissertacao["id"]]);
     	$aux++;
     }

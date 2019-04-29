@@ -320,6 +320,120 @@ function getPagina()
                     header("Location: /adm");
                 }  
             break;
+            //TESES
+            //////////////////////////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////////////
+            case '/adm_teses':
+            if(isset($_SESSION['administrador'])){
+                $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                if(isset($administradorVerificado)){
+                    $data = getTeses();
+                    $membros = getSelectOptions();
+                    include('View/Adm/teses.php');
+                }
+            }else{
+                header("Location: /adm");
+            }
+            break;
+            case '/criar_tese':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){
+                        criarTese();
+                    }
+                }else{
+                    header("Location: /adm");
+                }
+            break;
+            case '/editar_tese':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){                        
+                        $data = buscarFormTese($id);
+                        include('View/Adm/Forms/formTeses.php');
+                    }
+                }else{
+                    header("Location: /adm");
+                }
+            break;
+            case '/atualizar_tese':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){                        
+                        atualizarTese($id);
+                    }
+                }else{
+                    header("Location: /adm");
+                }
+            break;
+            case '/deletar_tese':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){
+                        header("Location: /adm_teses");
+                        deletarTese($id);
+                    }          
+                }else{
+                    header("Location: /adm");
+                }  
+            break;
+            //DISSERTACOES
+            //////////////////////////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////////////
+            case '/adm_dissertacoes':
+            if(isset($_SESSION['administrador'])){
+                $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                if(isset($administradorVerificado)){
+                    $data = getDissertacoes();
+                    $membros = getSelectOptions();
+                    include('View/Adm/dissertacoes.php');
+                }
+            }else{
+                header("Location: /adm");
+            }
+            break;
+            case '/criar_dissertacao':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){
+                        criarDissertacao();
+                    }
+                }else{
+                    header("Location: /adm");
+                }
+            break;
+            case '/editar_dissertacao':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){                        
+                        $data = buscarFormDissertacao($id);
+                        include('View/Adm/Forms/formDissertacoes.php');
+                    }
+                }else{
+                    header("Location: /adm");
+                }
+            break;
+            case '/atualizar_dissertacao':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){                        
+                        atualizarDissertacao($id);
+                    }
+                }else{
+                    header("Location: /adm");
+                }
+            break;
+            case '/deletar_dissertacao':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){
+                        header("Location: /adm_dissertacoes");
+                        deletarDissertacao($id);
+                    }          
+                }else{
+                    header("Location: /adm");
+                }  
+            break;
             //DEFAULT
             default:
                 include('View/404.php');
