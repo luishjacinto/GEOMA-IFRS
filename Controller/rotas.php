@@ -478,6 +478,19 @@ function getPagina()
                     header("Location: /adm");
                 }  
             break;
+            //GALERIA
+            //////////////////////////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////////////
+            case '/adm_fotos':
+            if(isset($_SESSION['administrador'])){
+                $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                if(isset($administradorVerificado)){
+                    //$data = getFotos();
+                    include('View/Adm/galeria.php');
+                }
+            }else{
+                header("Location: /adm");
+            }
             //DEFAULT
             default:
                 include('View/404.php');

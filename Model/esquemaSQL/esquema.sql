@@ -89,3 +89,10 @@ CREATE TABLE "noticias" (
     "conteudo" varchar(1000),
     CONSTRAINT "noticiasPK" PRIMARY KEY ("id")
 );
+
+CREATE TABLE "galeria" (
+    "id" SERIAL NOT NULL,
+    "legenda" varchar(100) NOT NULL,
+    "caminho" varchar(500),
+    CONSTRAINT "galeriaPK" PRIMARY KEY ("id")
+);

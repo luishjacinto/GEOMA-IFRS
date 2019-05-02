@@ -1,7 +1,7 @@
 <?php
 include_once('Setup.php');
 
-function inserirnoticia($noticia){
+function inserirNoticia($noticia){
     $novoNoticia=R::dispense('noticias');
     $novoNoticia["membro"]=$noticia['membro'];
     $novoNoticia['titulo']=$noticia['titulo'];
@@ -9,11 +9,11 @@ function inserirnoticia($noticia){
     $x = R::store($novoNoticia);
 }
 
-function buscarnoticia($id){
+function buscarNoticia($id){
     return R::findOne('noticias','id=?',[$id]);
 }
 
-function listarnoticias(){
+function listarNoticias(){
     $noticias = R::findAll("noticias"," ORDER BY id");
     $aux=0;
     $listaNoticias=[];
@@ -24,7 +24,7 @@ function listarnoticias(){
     return $listaNoticias;
 }
 
-function alterarnoticia($noticia,$id){
+function alterarNoticia($noticia,$id){
     $noticiaAtualizado=R::load("noticias",$id);
     $noticiaAtualizado['membro']=$noticia['membro'];    
     $noticiaAtualizado["titulo"]=$noticia['titulo'];
@@ -32,7 +32,7 @@ function alterarnoticia($noticia,$id){
     return R::store($noticiaAtualizado);
 }
 
-function deletarnoticia($id){
+function deletarNoticia($id){
     $noticia=R::findOne("noticias","id=?",[$id]);
     return R::trash($noticia);
 }

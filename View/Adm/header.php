@@ -20,7 +20,7 @@
     	<div class="col-2 menu">
 			<ul class="list-group list-group-flush">
 				<li class="list-group-item "><a href="adm_membros">Membros</a></li>
-				<li class="list-group-item"><a href="adm_galeria">Fotos da Galeria</a></li>
+				<li class="list-group-item"><a href="adm_fotos">Fotos da Galeria</a></li>
 				<li class="list-group-item"><a href="adm_noticias">Notícias</a></li>
 				<li class="list-group-item">
 					<a class="dropdown-toggle" href="#" data-toggle="dropdown">Produção Científica</a>
