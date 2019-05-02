@@ -18,7 +18,8 @@
 	</header>
 	<div class="row">
     	<div class="col-2 menu">
-			<ul class="list-group list-group-flush">
+			<ul class="list-group list-group-flush">				
+				<li class="list-group-item"><a href="adm_linhas">Linhas de Pesquisa</a></li>
 				<li class="list-group-item "><a href="adm_membros">Membros</a></li>
 				<li class="list-group-item"><a href="adm_fotos">Fotos da Galeria</a></li>
 				<li class="list-group-item"><a href="adm_noticias">Notícias</a></li>
