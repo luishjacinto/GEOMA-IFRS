@@ -143,11 +143,55 @@ function getPagina()
                 if(isset($_SESSION['administrador'])){
                     $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
                     if(isset($administradorVerificado)){
-                        //include('View/Adm/membros.php');
+                        $data = getNoticias();
+                        $membros = getSelectOptions();
+                        include('View/Adm/noticias.php');
                     }
                 }else{
                     header("Location: /adm");
                 }
+            break;
+            case '/criar_noticia':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){
+                        criarNoticia();
+                    }
+                }else{
+                    header("Location: /adm");
+                }
+            break;
+            case '/editar_noticia':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){                        
+                        $data = buscarFormNoticia($id);
+                        include('View/Adm/Forms/formNoticias.php');
+                    }
+                }else{
+                    header("Location: /adm");
+                }
+            break;
+            case '/atualizar_noticia':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){                        
+                        atualizarNoticia($id);
+                    }
+                }else{
+                    header("Location: /adm");
+                }
+            break;
+            case '/deletar_noticia':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){
+                        header("Location: /adm_noticias");
+                        deletarNoticia($id);
+                    }          
+                }else{
+                    header("Location: /adm");
+                }  
             break;
             //ARTIGOS
             //////////////////////////////////////////////////////////////////////////////

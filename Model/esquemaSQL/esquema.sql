@@ -75,5 +75,17 @@ CREATE TABLE "dissertacoes" (
     ON UPDATE CASCADE,
     "nome" varchar(100) NOT NULL,
     "caminho" varchar(500),
-    CONSTRAINT "dissertacaoPK" PRIMARY KEY ("ido")
+    CONSTRAINT "dissertacaoPK" PRIMARY KEY ("id")
+);
+
+CREATE TABLE "noticias" (
+    "id" SERIAL NOT NULL,
+    "membro" int NOT NULL,
+    CONSTRAINT "membroFK" FOREIGN KEY ("membro")
+    REFERENCES "membros" ("id")
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+    "titulo" varchar(100) NOT NULL,
+    "conteudo" varchar(1000),
+    CONSTRAINT "noticiasPK" PRIMARY KEY ("id")
 );

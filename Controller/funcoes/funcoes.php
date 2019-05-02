@@ -37,4 +37,9 @@ include('Controller/funcoes/Adm/Create/criarDissertacao.php');
 include('Controller/funcoes/Adm/Read/getDissertacoes.php');
 include('Controller/funcoes/Adm/Read/buscarFormDissertacao.php');  
 include('Controller/funcoes/Adm/Update/atualizarDissertacao.php');
+
+include('Controller/funcoes/Adm/Create/criarNoticia.php');  
+include('Controller/funcoes/Adm/Read/getNoticias.php');
+include('Controller/funcoes/Adm/Read/buscarFormNoticia.php');  
+include('Controller/funcoes/Adm/Update/atualizarNoticia.php');
 ?>
