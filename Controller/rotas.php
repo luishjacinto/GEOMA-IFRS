@@ -482,15 +482,58 @@ function getPagina()
             //////////////////////////////////////////////////////////////////////////////
             //////////////////////////////////////////////////////////////////////////////
             case '/adm_fotos':
-            if(isset($_SESSION['administrador'])){
-                $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
-                if(isset($administradorVerificado)){
-                    //$data = getFotos();
-                    include('View/Adm/galeria.php');
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){
+                        $data = getFotos();
+                        include('View/Adm/galeria.php');
+                    }
+                }else{
+                    header("Location: /adm");
                 }
-            }else{
-                header("Location: /adm");
-            }
+            break;
+            case '/criar_foto':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){
+                        criarFoto();
+                    }
+                }else{
+                    header("Location: /adm");
+                }
+            break;
+            /*case '/editar_foto':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){                        
+                        $data = buscarFormFoto($id);
+                        include('View/Adm/Forms/formDissertacoes.php');
+                    }
+                }else{
+                    header("Location: /adm");
+                }
+            break
+            case '/atualizar_foto':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){                        
+                        atualizarFoto($id);
+                    }
+                }else{
+                    header("Location: /adm");
+                }
+            break;;*/
+            case '/deletar_foto':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){
+                        header("Location: /adm_fotos");
+                        deletarGaleria($id);
+                    }          
+                }else{
+                    header("Location: /adm");
+                }  
+            break;
             //DEFAULT
             default:
                 include('View/404.php');
@@ -498,8 +541,4 @@ function getPagina()
     }
 
 }
-
-function getHeaderAdm(){include('View/Adm/header.php');}
-function getFooterAdm(){include('View/Adm/footer.php');}
-
 ?>

@@ -4,7 +4,7 @@ include_once('Setup.php');
 function inserirGaleria($galeria){
     $novoGaleria=R::dispense('galeria');
     $novoGaleria['legenda']=$galeria['legenda'];
-    $novoGaleria['conteudo']=$galeria['conteudo'];
+    $novoGaleria['caminho']=$galeria['caminho'];
     $x = R::store($novoGaleria);
 }
 
@@ -25,8 +25,8 @@ function listarGalerias(){
 
 function alterarGaleria($galeria,$id){
     $galeriaAtualizado=R::load("galeria",$id);
-    $galeriaAtualizado["titulo"]=$galeria['titulo'];
-    $galeriaAtualizado['conteudo']=$galeria['conteudo'];
+    $galeriaAtualizado["legenda"]=$galeria['legenda'];
+    $galeriaAtualizado['caminho']=$galeria['caminho'];
     return R::store($galeriaAtualizado);
 }
 

@@ -34,7 +34,9 @@ function salvarImagem($pasta){
         if (move_uploaded_file($_FILES['arquivo']['tmp_name'], $_UP['pasta'].$nome_final)) {
             return $_UP['pasta'].$nome_final;
         } else {
-            return $_UP['pasta'].'default-pic.png'; //IMAGEM PADRAO
+            if($pasta == 'Galeria'){
+                return $_UP['pasta'].'default-pic.png';
+            } 
         }
         
     }else{

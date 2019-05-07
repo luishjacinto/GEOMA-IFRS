@@ -42,4 +42,9 @@ include('Controller/funcoes/Adm/Create/criarNoticia.php');
 include('Controller/funcoes/Adm/Read/getNoticias.php');
 include('Controller/funcoes/Adm/Read/buscarFormNoticia.php');  
 include('Controller/funcoes/Adm/Update/atualizarNoticia.php');
+
+include('Controller/funcoes/Adm/Create/criarFoto.php');  
+include('Controller/funcoes/Adm/Read/getFotos.php');
+//include('Controller/funcoes/Adm/Read/buscarFormFoto.php');  
+//include('Controller/funcoes/Adm/Update/atualizarFoto.php');
 ?>

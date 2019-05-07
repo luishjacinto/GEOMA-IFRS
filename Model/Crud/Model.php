@@ -8,4 +8,5 @@ include_once('Model/Crud/Tese.php');
 include_once('Model/Crud/Dissertacao.php');
 include_once('Model/Crud/Imagem.php');
 include_once('Model/Crud/Noticia.php');
+include_once('Model/Crud/Galeria.php');
 ?>
