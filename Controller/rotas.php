@@ -502,17 +502,17 @@ function getPagina()
                     header("Location: /adm");
                 }
             break;
-            /*case '/editar_foto':
+            case '/editar_foto':
                 if(isset($_SESSION['administrador'])){
                     $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
                     if(isset($administradorVerificado)){                        
                         $data = buscarFormFoto($id);
-                        include('View/Adm/Forms/formDissertacoes.php');
+                        include('View/Adm/Forms/formFoto.php');
                     }
                 }else{
                     header("Location: /adm");
                 }
-            break
+            break;
             case '/atualizar_foto':
                 if(isset($_SESSION['administrador'])){
                     $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
@@ -522,7 +522,7 @@ function getPagina()
                 }else{
                     header("Location: /adm");
                 }
-            break;;*/
+            break;
             case '/deletar_foto':
                 if(isset($_SESSION['administrador'])){
                     $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);

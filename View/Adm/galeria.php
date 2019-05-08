@@ -4,7 +4,7 @@
 	<div class="col-10 pd-0 main-section">
 		<br>
 		<h3 class="text-center">Fotos</h3>
-		<div class="container-fluid-adm galeria-adm radiusLeft">
+		<div class="container-fluid-adm galeria-adm radiusLeft img-container">
 			<?php echo $data ?>
 		</div>
 		<br>

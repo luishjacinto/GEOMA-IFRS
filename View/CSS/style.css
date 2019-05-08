@@ -211,6 +211,7 @@ ul li {
 .galeria-adm{
     max-height: 40%;
     overflow-y: scroll;
+    padding-left: 4%
 }
 
 .div-img{
@@ -218,6 +219,7 @@ ul li {
     width: 20%;
     height: 20%;
     margin: 2%;
+    background-color: white;
 }
 
 .img-galeria{
