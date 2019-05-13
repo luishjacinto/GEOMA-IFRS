@@ -1,3 +1,1 @@
-// SABER OQ VAI SER O LINHAS DE PESQUISA (criar esquema sql e pa)
-// DISERTAÇÕES TESES CRUD
-// GALERIA E NOTICIAS CRUD
+//pesquisador, tecnico, estudante
