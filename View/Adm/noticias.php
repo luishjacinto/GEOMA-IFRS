@@ -21,7 +21,7 @@
 			</div>
 			<div class="form-group">
 				<label for="conteudo">Conteudo</label>
-				<input type="text" class="form-control" name="conteudo" placeholder="Insira o conteudo da notícia" required>
+				<textarea type="text" class="form-control textA" rows="5" name="conteudo" placeholder="Insira o conteudo da notícia" required></textarea>
 			</div>
 			<label for="membro">Autor</label>
 			<select name="membro" class="form-control form-control-sm" required>
