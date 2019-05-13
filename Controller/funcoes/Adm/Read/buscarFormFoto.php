@@ -3,7 +3,7 @@
 function buscarFormFoto($id){
     $foto = buscarGaleria($id);
 
-    $form = '<div id="ref1" class="div-img"><img id="img1" class="img-galeria" src="'.$foto['caminho'].'"/></div>
+    $form = '<div class="img-container"><div id="ref1" class="div-img"><img id="img1" class="img-galeria" src="'.$foto['caminho'].'"/></div></div>
     <form method="POST" action="atualizar_foto?'.$foto['id'].'" enctype="multipart/form-data">
         <div class="form-group">
             <label for="legenda">Legenda</label>

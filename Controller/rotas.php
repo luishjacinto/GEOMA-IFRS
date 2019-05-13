@@ -73,6 +73,7 @@ function getPagina()
                 if(isset($_SESSION['administrador'])){
                     $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
                     if(isset($administradorVerificado)){
+                        $data = getContadores();
                         include('View/Adm/inicio.php');
                     }
                 }else{

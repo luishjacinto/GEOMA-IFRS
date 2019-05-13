@@ -12,7 +12,7 @@
 
 <body>
 	<header>
-		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		<nav class="navbar navbar-expand-sm nav bg-dark navbar-dark">
 			<a href="adm_inicio"><h2>Geoma</h2></a>
 		</nav>
 	</header>

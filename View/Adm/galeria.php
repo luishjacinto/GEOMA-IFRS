@@ -3,11 +3,7 @@
 <?php include('View/Adm/header.php'); ?>
 	<div class="col-10 pd-0 main-section">
 		<br>
-		<h3 class="text-center">Fotos</h3>
-		<div class="container-fluid-adm galeria-adm radiusLeft img-container">
-			<?php echo $data ?>
-		</div>
-		<br>
+		<?php echo $data ?>
 		<h3 class="text-center">Adicionar Foto</h3>
 		<div class="container-fluid-adm formsCRUD">
 			<form method="POST" action="criar_foto" enctype="multipart/form-data">

@@ -6,6 +6,7 @@ include('Controller/funcoes/Adm/redirectAdm.php');
 include('Controller/funcoes/Adm/getSelectOptions.php');
 include('Controller/funcoes/Adm/montaCargos.php');
 include('Controller/funcoes/Adm/montaMembros.php');
+include('Controller/funcoes/Adm/getContadores.php');
 
 //CRUD
 include('Controller/funcoes/Adm/Create/criarMembro.php');
