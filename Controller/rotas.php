@@ -30,7 +30,12 @@ function getPagina()
                 include('View/Client/dissertacoes.php');
             break;
             case '/galeria':
+                $data = getGaleria();
                 include('View/Client/galeria.php');
+            break;
+            case '/buscar_imagem':
+                $foto = buscarGaleria($id);                
+                echo json_encode($foto);
             break;
             case '/linhas-de-pesquisa':
                 include('View/Client/linhasDePesquisa.php');
@@ -530,6 +535,62 @@ function getPagina()
                     if(isset($administradorVerificado)){
                         header("Location: /adm_fotos");
                         deletarGaleria($id);
+                    }          
+                }else{
+                    header("Location: /adm");
+                }  
+            break;
+            //LINHA
+            //////////////////////////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////////////
+            case '/adm_linhas':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){
+                        $data = getLinhas();
+                        include('View/Adm/LinhasDePesquisa.php');
+                    }
+                }else{
+                    header("Location: /adm");
+                }
+            break;
+            case '/criar_linha':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){
+                        criarLinha();
+                    }
+                }else{
+                    header("Location: /adm");
+                }
+            break;
+            case '/editar_linha':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){                        
+                        $data = buscarFormLinha($id);
+                        include('View/Adm/Forms/formLinhas.php');
+                    }
+                }else{
+                    header("Location: /adm");
+                }
+            break;
+            case '/atualizar_linha':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){                        
+                        atualizarLinha($id);
+                    }
+                }else{
+                    header("Location: /adm");
+                }
+            break;
+            case '/deletar_linha':
+                if(isset($_SESSION['administrador'])){
+                    $administradorVerificado = verificarAdmLogin($_SESSION['administrador']);
+                    if(isset($administradorVerificado)){
+                        header("Location: /adm_linhas");
+                        deletarLinha($id);
                     }          
                 }else{
                     header("Location: /adm");

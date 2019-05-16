@@ -6,6 +6,8 @@
 			<div class="container-fluid">
 				Membros Cadastrados: <?php echo $data[4] ?>
 				<br>
+				Linhas de Pesquisa Cadastrados: <?php echo $data[8] ?>
+				<br>
 				Notícias Cadastrados: <?php echo $data[5] ?>
 				<br>
 				Artigos Cadastrados: <?php echo $data[0] ?>

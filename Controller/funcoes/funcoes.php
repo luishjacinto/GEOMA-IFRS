@@ -1,4 +1,8 @@
 <?php 
+//FUNÇÕES CLIENT
+include('Controller/funcoes/Client/getGaleria.php');
+
+
 //FUNÇÕES ADM
 include('Controller/funcoes/Adm/deslogar.php');
 include('Controller/funcoes/Adm/logar.php');
@@ -48,4 +52,9 @@ include('Controller/funcoes/Adm/Create/criarFoto.php');
 include('Controller/funcoes/Adm/Read/getFotos.php');
 include('Controller/funcoes/Adm/Read/buscarFormFoto.php');  
 include('Controller/funcoes/Adm/Update/atualizarFoto.php');
+
+include('Controller/funcoes/Adm/Create/criarLinha.php');  
+include('Controller/funcoes/Adm/Read/getLinhas.php');
+include('Controller/funcoes/Adm/Read/buscarFormLinha.php');  
+include('Controller/funcoes/Adm/Update/atualizarLinha.php');
 ?>

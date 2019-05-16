@@ -1,4 +1,4 @@
-z<?php
+<?php
 include_once('Setup.php');
 
 function inserirLinha($linha){
@@ -19,7 +19,7 @@ function listarLinhas(){
     	$listaLinhas[$aux]=R::findOne('linha',"id=?",[$linha["id"]]);
     	$aux++;
     }
-    return $listalinhas;
+    return $listaLinhas;
 }
 
 function alterarLinha($linha,$id){

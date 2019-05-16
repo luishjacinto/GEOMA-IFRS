@@ -10,8 +10,9 @@ function getContadores(){
     $noticias = count(listarNoticias());
     $tccs = count(listarTccs());
     $teses = count(listarTeses());
+    $linhas = count(listarLinhas());
 
-    $data = array($artigos,$dissertacoes,$fotos,$livros,$membros,$noticias,$tccs,$teses);
+    $data = array($artigos,$dissertacoes,$fotos,$livros,$membros,$noticias,$tccs,$teses,$linhas);
     return $data;
 }
 
