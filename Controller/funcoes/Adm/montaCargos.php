@@ -1,7 +1,7 @@
 <?php
 
 function montaCargos($cargo) {
-    $cargos = array('Pesquisador', 'SLA', 'N SEI');
+    $cargos = array('Pesquisador', 'Técnico', 'Estudante');
     $codSegundoCargo = (((int) $cargo + 1) % 3);
     $codTerceiroCargo = (((int) $cargo + 2) % 3);
 

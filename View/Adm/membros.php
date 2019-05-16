@@ -26,8 +26,8 @@
 			<label for="cargo">Cargo</label>
 			<select name="cargo" class="form-control form-control-sm" required>
 				<option value="0">Pesquisador</option>
-				<option value="1">NAO SEI</option>
-				<option value="2">N SEI</option>
+				<option value="1">Técnico</option>
+				<option value="2">Estudante</option>
 			</select>
 			<br>
 			<div class="form-group">

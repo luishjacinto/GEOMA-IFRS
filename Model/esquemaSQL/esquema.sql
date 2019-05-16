@@ -96,3 +96,8 @@ CREATE TABLE "galeria" (
     "caminho" varchar(500),
     CONSTRAINT "galeriaPK" PRIMARY KEY ("id")
 );
+
+CREATE TABLE "linha" (
+    "id" SERIAL NOT NULL,
+    "nome" varchar(100) NOT NULL
+);
