@@ -59,7 +59,7 @@ function isElementInViewport(el) {
         rect.right <= (window.innerWidth || document.documentElement.clientWidth) /*or $(window).width() */
     );
 }
-
+/*
 document.addEventListener("DOMContentLoaded", function() {
     let lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
     let active = false;
@@ -100,3 +100,24 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener("resize", lazyLoad);
     window.addEventListener("orientationchange", lazyLoad);
   });
+*/  
+
+$('#modal').on('shown.bs.modal', function () {
+    $('#meuInput').trigger('focus')
+  })
+
+$('.modalTrigger').click(function(){
+    console.log($(this).children().children().attr('id'));
+    id = $(this).children().children().attr('id');
+    setModal(id);
+})
+
+function setModal(id){
+    $.ajax({
+        url: "buscar_imagem?"+id,
+        context: document.body
+    }).done(function(data) {
+        $("#modalImagem").attr('src',JSON.parse(data).caminho)
+        $("#legendaImagem").html(JSON.parse(data).legenda)
+    });
+}
