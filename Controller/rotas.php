@@ -38,12 +38,14 @@ function getPagina()
                 echo json_encode($foto);
             break;
             case '/linhas-de-pesquisa':
+                $data = getLinhasPesquisa();
                 include('View/Client/linhasDePesquisa.php');
             break;
             case '/livros':
                 include('View/Client/livros.php');
             break;
             case '/membros':
+                $data = getCardMembros();
                 include('View/Client/membros.php');
             break;
             case '/noticias':

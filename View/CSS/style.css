@@ -287,6 +287,20 @@ ul li {
     max-height: 100%;
 }
 
+.modal-body{
+    margin: auto;
+}
+
 .modal-footer{
     justify-content: baseline !important;
+}
+
+.card-box{
+    position: relative;
+    display: inline-block;
+    height: 25%;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto; 
+    margin-bottom: 7%;  
 }

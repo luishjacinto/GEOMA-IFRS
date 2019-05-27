@@ -9,9 +9,10 @@ function atualizarMembro($id){
         "cargo"=>$_POST["cargo"],
         "imagem"=> checarAlteracao('Membros',$membroAntigo['imagem'])
     ];
+    var_dump($membro);
     alterarMembro($membro,$id);
 
-    header("Location: /adm_membros");
+    //header("Location: /adm_membros");
 }
 
 ?>

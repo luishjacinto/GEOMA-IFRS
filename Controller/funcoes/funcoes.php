@@ -1,6 +1,9 @@
 <?php 
 //FUNÇÕES CLIENT
+include('Controller/funcoes/Client/getCardMembros.php');
 include('Controller/funcoes/Client/getGaleria.php');
+include('Controller/funcoes/Client/getLinhasPesquisa.php');
+
 
 
 //FUNÇÕES ADM
