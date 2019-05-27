@@ -8,7 +8,7 @@ function getPagina()
  	//error_reporting(0);
 	$path = $_SERVER['REQUEST_URI'];
 	$url = strtolower(explode("?",$path)[0]);
-    //var_dump($url);
+    var_dump($url);
     if(isset(explode("?",$path)[1])){
         $id = explode("?",$path)[1];
     }

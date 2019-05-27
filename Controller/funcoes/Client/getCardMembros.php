@@ -20,7 +20,7 @@ function getCardMembros(){
 		<div class="card-body">
             <h4 class="card-title">'.$membro['nome'].'</h4>
             <p class="card-text">'.$cargo.'</p>
-			<a href='.$membro['lattes'].' class="btn btn-light btn-block">Currículo</a>
+			<a href="https://'.$membro['lattes'].'" class="btn btn-light btn-block">Currículo</a>
 		</div>
 		</div>';
     }
