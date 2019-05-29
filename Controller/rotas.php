@@ -8,7 +8,7 @@ function getPagina()
  	//error_reporting(0);
 	$path = $_SERVER['REQUEST_URI'];
 	$url = strtolower(explode("?",$path)[0]);
-    var_dump($url);
+    //var_dump($url);
     if(isset(explode("?",$path)[1])){
         $id = explode("?",$path)[1];
     }
@@ -21,12 +21,14 @@ function getPagina()
                 include('View/Client/home.php');
             break;
             case '/artigos':
+                $data = getProducaoArtigos();
                 include('View/Client/artigos.php');
             break;
             case '/contato':
                 include('View/Client/contato.php');
             break;
             case '/dissertacoes':
+                $data = getProducaoDissertacoes();
                 include('View/Client/dissertacoes.php');
             break;
             case '/galeria':
@@ -42,6 +44,7 @@ function getPagina()
                 include('View/Client/linhasDePesquisa.php');
             break;
             case '/livros':
+                $data = getProducaoLivros();
                 include('View/Client/livros.php');
             break;
             case '/membros':
@@ -49,12 +52,15 @@ function getPagina()
                 include('View/Client/membros.php');
             break;
             case '/noticias':
+                $data = getNoticia();
                 include('View/Client/noticias.php');
             break;
             case '/tccs':
+                $data = getProducaoTccs();
                 include('View/Client/TCCs.php');
             break;
             case '/teses':
+                $data = getProducaoTeses();
                 include('View/Client/teses.php');
             break;
             case '/adm':

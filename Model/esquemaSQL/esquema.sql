@@ -8,7 +8,7 @@ CREATE TABLE "administrador" (
     CONSTRAINT "admPK" PRIMARY KEY ("id")
 );
 
-CREATE TABLE "membros" ( -- *TALVEZ UMA BIO SLA, PERGUNTAR P JEFF
+CREATE TABLE "membros" (
     "id" SERIAL NOT NULL,
     "nome" varchar(60) NOT NULL,
     "cargo" int NOT NULL DEFAULT 0,
@@ -30,10 +30,10 @@ CREATE TABLE "artigos" (
     CONSTRAINT "artigoPK" PRIMARY KEY ("id")
 );
 
-CREATE TABLE "livro" (
+CREATE TABLE "livros" (
     "id" SERIAL NOT NULL,
-    "idMembro" int NOT NULL,
-    CONSTRAINT "membroFK" FOREIGN KEY ("idMembro")
+    "membro" int NOT NULL,
+    CONSTRAINT "membroFK" FOREIGN KEY ("membro")
     REFERENCES "membros" ("id")
     ON DELETE CASCADE
     ON UPDATE CASCADE,
@@ -42,10 +42,10 @@ CREATE TABLE "livro" (
     CONSTRAINT "livroPK" PRIMARY KEY ("id")
 );
 
-CREATE TABLE "TCCs" (
+CREATE TABLE "tccs" (
     "id" SERIAL NOT NULL,
-    "idMembro" int NOT NULL,
-    CONSTRAINT "membroFK" FOREIGN KEY ("idMembro")
+    "membro" int NOT NULL,
+    CONSTRAINT "membroFK" FOREIGN KEY ("membro")
     REFERENCES "membros" ("id")
     ON DELETE CASCADE
     ON UPDATE CASCADE,
@@ -56,8 +56,8 @@ CREATE TABLE "TCCs" (
 
 CREATE TABLE "teses" (
     "id" SERIAL NOT NULL,
-    "idMembro" int NOT NULL,
-    CONSTRAINT "membroFK" FOREIGN KEY ("idMembro")
+    "membro" int NOT NULL,
+    CONSTRAINT "membroFK" FOREIGN KEY ("membro")
     REFERENCES "membros" ("id")
     ON DELETE CASCADE
     ON UPDATE CASCADE,
@@ -68,8 +68,8 @@ CREATE TABLE "teses" (
 
 CREATE TABLE "dissertacoes" (
     "id" SERIAL NOT NULL,
-    "idMembro" int NOT NULL,
-    CONSTRAINT "membroFK" FOREIGN KEY ("idMembro")
+    "membro" int NOT NULL,
+    CONSTRAINT "membroFK" FOREIGN KEY ("membro")
     REFERENCES "membros" ("id")
     ON DELETE CASCADE
     ON UPDATE CASCADE,
@@ -86,7 +86,8 @@ CREATE TABLE "noticias" (
     ON DELETE CASCADE
     ON UPDATE CASCADE,
     "titulo" varchar(100) NOT NULL,
-    "conteudo" varchar(1000),
+    "conteudo" varchar(20000),
+    --"data" timestamp NOT NULL DEFAULT NOW(),
     CONSTRAINT "noticiasPK" PRIMARY KEY ("id")
 );
 

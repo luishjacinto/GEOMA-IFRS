@@ -3,7 +3,13 @@
 include('Controller/funcoes/Client/getCardMembros.php');
 include('Controller/funcoes/Client/getGaleria.php');
 include('Controller/funcoes/Client/getLinhasPesquisa.php');
-
+include('Controller/funcoes/Client/getNoticia.php');
+//PRODUCAO
+include('Controller/funcoes/Client/getProducaoArtigos.php');
+include('Controller/funcoes/Client/getProducaoDissertacoes.php');
+include('Controller/funcoes/Client/getProducaoLivros.php');
+include('Controller/funcoes/Client/getProducaoTccs.php');
+include('Controller/funcoes/Client/getProducaoTeses.php');
 
 
 //FUNÇÕES ADM
