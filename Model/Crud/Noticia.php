@@ -6,6 +6,7 @@ function inserirNoticia($noticia){
     $novoNoticia["membro"]=$noticia['membro'];
     $novoNoticia['titulo']=$noticia['titulo'];
     $novoNoticia['conteudo']=$noticia['conteudo'];
+    $novoNoticia['data']=$date = date("d-m-Y");
     $x = R::store($novoNoticia);
 }
 

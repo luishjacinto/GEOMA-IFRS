@@ -87,7 +87,7 @@ CREATE TABLE "noticias" (
     ON UPDATE CASCADE,
     "titulo" varchar(100) NOT NULL,
     "conteudo" varchar(20000),
-    --"data" timestamp NOT NULL DEFAULT NOW(),
+    "data" varchar(20) NOT NULL,
     CONSTRAINT "noticiasPK" PRIMARY KEY ("id")
 );
 
