@@ -53,7 +53,14 @@ function getPagina()
             break;
             case '/noticias':
                 $data = getNoticia();
+                $data2 = getListaNoticias();
                 include('View/Client/noticias.php');
+            break;
+            case '/buscar_noticia':
+                $noticia = buscarNoticia($id);
+                $membro = buscarMembro($noticia['membro']); 
+                $noticia['membro'] = $membro['nome'];   
+                echo json_encode($noticia);
             break;
             case '/tccs':
                 $data = getProducaoTccs();

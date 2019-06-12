@@ -4,6 +4,7 @@ include('Controller/funcoes/Client/getCardMembros.php');
 include('Controller/funcoes/Client/getGaleria.php');
 include('Controller/funcoes/Client/getLinhasPesquisa.php');
 include('Controller/funcoes/Client/getNoticia.php');
+include('Controller/funcoes/Client/getListaNoticias.php');
 //PRODUCAO
 include('Controller/funcoes/Client/getProducaoArtigos.php');
 include('Controller/funcoes/Client/getProducaoDissertacoes.php');
