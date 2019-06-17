@@ -13,7 +13,7 @@
 <body>
 	<header>
 		<nav class="navbar navbar-expand-sm nav bg-dark navbar-dark">
-			<a href="adm_inicio"><h2>Geoma</h2></a>
+			<a class="tituloadm" href="adm_inicio"><h2>Geoma - Administração</h2></a>
 		</nav>
 	</header>
 	<div class="row">

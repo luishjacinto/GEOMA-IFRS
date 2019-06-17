@@ -12,6 +12,10 @@ font-face {
     --color-dash: #343a40;
 }
 
+html{
+    overflow-x: hidden;
+}
+
 body { 
     font-family: Helvetica; 
     background-image: url("/View/Imagens/4.jpg"); 
@@ -303,4 +307,27 @@ ul li {
     margin-left: auto;
     margin-right: auto; 
     margin-bottom: 7%;  
+}
+
+.tituloadm{
+    color: white;
+}
+
+.tituloadm h2{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.tituloadm:hover{
+    color: white;
+    text-decoration: none;
+}
+
+
+.card-title{
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 21ch;
 }

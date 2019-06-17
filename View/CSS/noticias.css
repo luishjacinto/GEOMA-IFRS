@@ -34,7 +34,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 21ch;
-
 }
 
 .listlink:hover{
@@ -44,4 +43,10 @@
 
 .conteudos{
     display: flex;
+}
+
+
+.ultimas td{
+    border-top: 1px solid #343a40;
+    border-bottom: 1px solid #343a40;
 }
