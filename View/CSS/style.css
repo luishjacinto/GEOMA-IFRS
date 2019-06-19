@@ -302,7 +302,6 @@ ul li {
 .card-box{
     position: relative;
     display: inline-block;
-    height: 25%;
     width: 30%;
     margin-left: auto;
     margin-right: auto; 
@@ -330,4 +329,8 @@ ul li {
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 21ch;
+}
+
+p{
+    margin-bottom:0;
 }
