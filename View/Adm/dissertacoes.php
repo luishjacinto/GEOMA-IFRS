@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<title>Adm - Dissertações</title>
+<title>Administração - Dissertações</title>
 <?php include('View/Adm/header.php'); ?>
 
 <div class="col-10 pd-0 main-section">

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<title>Adm - Fotos</title>
+<title>Administração - Fotos</title>
 <?php include('View/Adm/header.php'); ?>
 	<div class="col-10 pd-0 main-section">
 		<br>

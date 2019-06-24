@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<title>Adm - Linhas de Pesquisa</title>
+<title>Administração - Linhas de Pesquisa</title>
 <?php include('View/Adm/header.php'); ?>
 
 <div class="col-10 pd-0 main-section">

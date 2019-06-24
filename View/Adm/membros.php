@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<title>Adm - Membros</title>
+<title>Administração - Membros</title>
 <?php include('View/Adm/header.php'); ?>
 
 <div class="col-10 pd-0 main-section">

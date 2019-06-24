@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<title>Adm - Teses</title>
+<title>Administração - Teses</title>
 <?php include('View/Adm/header.php'); ?>
 
 <div class="col-10 pd-0 main-section">
